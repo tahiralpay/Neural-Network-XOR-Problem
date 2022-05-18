@@ -1,12 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+
+print("   ")
 i1 = np.array([0,0,1,1])
 i2 = np.array([0,1,0,1])
 istenilen_cikis = np.array([0,1,1,0])  
 n = 0.5
 iterasyon = 3000
-
 b1 = random.random()            
 b2 = random.random()                 
 w1 = random.random()            
@@ -64,8 +65,7 @@ for i in range(iterasyon):
     w5 = w5 - (n * Etotal_w5)
     w6 = w6 - (n * Etotal_w6)
     outo1_list.append(outo1)
-
-    if Etotal == 0.01:
+    if((Etotal < 0.00060).any()):
         break
 
 print("Cikis: ", outo1)
